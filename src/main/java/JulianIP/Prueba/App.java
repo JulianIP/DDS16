@@ -5,7 +5,7 @@ package JulianIP.Prueba;
  *
  */
 
-//Hola loco a ver si anda esto.
+//Hola son las 4 y 10 pm del miercoles 23 de marzo de 2016
 
 public class App 
 {
