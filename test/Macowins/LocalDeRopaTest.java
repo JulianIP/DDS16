@@ -44,5 +44,16 @@ public class LocalDeRopaTest {
 	public void precioFinalDePantalonInternacional() {
 		Assert.assertEquals(455.0, macowins.precioFinalDe(pantalonNegro),0.01);
 	}
+		
+	@Test
+	public void gananciaDelDia() {
+		macowins.vender(20150728,sacoGucci,1);
+		macowins.vender(20160324,sacoNegro,2);
+		macowins.vender(20160324,pantalonNegro,3);		
+		
+		Assert.assertEquals(2165.0, macowins.gananciaDelDia(20160324),0.01);
+	}
+    
+	
 
 }
