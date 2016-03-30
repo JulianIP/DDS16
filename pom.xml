@@ -3,11 +3,10 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>JulianIP</groupId>
-  <artifactId>Prueba</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <packaging>jar</packaging>
+  <packaging>war</packaging>
 
-  <name>Prueba</name>
+  <name>Macowins</name>
   <url>http://maven.apache.org</url>
 
   <properties>
@@ -21,4 +20,5 @@
       <version>4.12</version>
     </dependency>
   </dependencies>
+  <artifactId>Macowins</artifactId>
 </project>
