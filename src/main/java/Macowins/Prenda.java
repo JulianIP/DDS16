@@ -5,6 +5,7 @@ public abstract class Prenda{
 	double precioBase;
 	Procedencia procedencia;
 	String nombre;
+	Marca marca;
 	
 	public double getPrecioBase() {
 		
@@ -18,5 +19,10 @@ public abstract class Prenda{
 	public double tasa(){
 		
 		return procedencia.getTasa();
+	}
+
+	public double coeficienteDeMarca(double precioOriginal) {
+		
+		return marca.coeficiente(precioOriginal);
 	}
 }

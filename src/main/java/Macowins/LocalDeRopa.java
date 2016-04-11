@@ -14,8 +14,9 @@ public class LocalDeRopa {
 	}
 
 	public double precioFinalDe(Prenda unaPrenda) {
-		double precioFinal = (unaPrenda.getPrecioBase() + precioFijo) * unaPrenda.tasa();
-		return precioFinal;
+		double precioOriginal = (unaPrenda.getPrecioBase() + precioFijo) * unaPrenda.tasa();
+		
+		return precioOriginal*unaPrenda.coeficienteDeMarca(precioOriginal);
 	}
 
 	public void vender(int unaFecha, Prenda unaPrenda, int cant) {
@@ -36,30 +37,5 @@ public class LocalDeRopa {
 
 		return ganancia;
 	}
-
-	public static void main(String[] args) {
-
-		Nacional nacional = new Nacional();
-		Internacional internacional = new Internacional();
-		Saco unSaco = new Saco("saco negro", nacional);
-		LocalDeRopa macowins = new LocalDeRopa(100);
-		Saco otroSaco = new Saco("saco gucci", internacional);
-
-		Camisa unaCamisa = new Camisa("camisa negra", nacional);
-
-		/*
-		 * System.out.println(macowins.precioFinalDe(unSaco));
-		 * System.out.println(macowins.precioFinalDe(otroSaco));
-		 * System.out.println(macowins.precioFinalDe(unaCamisa));
-		 */
-
-		macowins.vender(20160323, unSaco, 2);
-
-		macowins.vender(20160325, otroSaco, 1);
-
-		macowins.vender(20160324, unaCamisa, 1);
-
-		System.out.println(macowins.gananciaDelDia(20160324));
-
-	}
+	
 }
