@@ -1,9 +1,9 @@
 package Macowins;
 
-public class Internacional extends Procedencia{
+public class Internacional implements Procedencia{
 	
-public Internacional(){
-		
-		tasa=1.3;
-	}
+public double tasa(){
+	
+	return 1.3;
+}
 }

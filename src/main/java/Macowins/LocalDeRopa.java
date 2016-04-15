@@ -14,9 +14,8 @@ public class LocalDeRopa {
 	}
 
 	public double precioFinalDe(Prenda unaPrenda) {
-		double precioOriginal = (unaPrenda.getPrecioBase() + precioFijo) * unaPrenda.tasa();
 		
-		return precioOriginal*unaPrenda.coeficienteDeMarca(precioOriginal);
+		return unaPrenda.precioFinal(precioFijo);
 	}
 
 	public void vender(int unaFecha, Prenda unaPrenda, int cant) {
@@ -27,13 +26,9 @@ public class LocalDeRopa {
 
 	public double gananciaDelDia(int unaFecha) {
 
-		double ganancia = 0;
-
-		for (Venta unaVenta : ventas) {
-			if (unaFecha == unaVenta.getFecha()) {
-				ganancia += unaVenta.precioTotal(this);
-			}
-		}
+		double ganancia=ventas.stream().filter ( venta -> (venta.getFecha()) == unaFecha).
+		mapToDouble(venta-> venta.precioTotal(this)).sum();
+			
 
 		return ganancia;
 	}

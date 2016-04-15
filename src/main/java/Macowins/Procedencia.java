@@ -1,17 +1,7 @@
 package Macowins;
 
-public abstract class Procedencia {
+public interface Procedencia {
 	
-	double tasa;	
-
-	public double getTasa() {
-		return tasa;
-	}
-
-	public void setTasa(int unaTasa) {
-		tasa = unaTasa;
-	}
-	
-	
+double tasa();	
 
 }
